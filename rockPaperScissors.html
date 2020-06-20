@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let playerSelection; 
+    let computerSelection;
+
+    function computerPlay() {
+        let selection = Math.random().toFixed(2);
+        if (selection >= 0.66) {
+            return "Rock";
+        } else if (selection >= 0.33 && selection < 0.66) {
+            return "Paper";
+        } else {
+            return "Scissors";
+        }
+    }
+
+    function singleRound(playerSelection,computerSelection){
+        
+
+       if (playerSelection == /"rock"/i && computerSelection == "Rock"){
+           alert("Tie");
+       } else if (playerSelection == /"rock"/i && computerSelection == "Scissors"){
+           alert("You Win!");
+       } else if (playerSelection == /"rock"/i && computerSelection == "Paper"){
+           alert("You Lose.!");
+       } else if (playerSelection == /"paper"/i && computerSelection == "Rock"){
+           alert("You Win!");
+       } else if (playerSelection == /"paper"/i && computerSelection == "Scissors"){
+           alert("You Lose.");
+       } else if (playerSelection == /"paper"/i && computerSelection == "Paper"){
+           alert("Tie");
+       } else if (playerSelection == /"scissors"/i && computerSelection == "Rock"){
+           alert("You Lose.");
+       } else if (playerSelection == /"scissors"/i && computerSelection == "Scissors"){
+           alert("Tie");
+       } else if (playerSelection == /"scissors"/i && computerSelection == "Paper"){
+           alert("You Win!");
+       }
+       console.log(singleRound(playerSelection,computerSelection));
+    }
+    function game() {
+        playerSelection = prompt("Rock Paper Scissors", "");
+    }
+    
+</script>
+</body>
+</html>

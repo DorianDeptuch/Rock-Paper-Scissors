@@ -7,9 +7,11 @@
 </head>
 <body>
     <script>
-
+function game() {
+    let playerSelect;
     let playerSelection; 
-    let computerSelection;
+    let computerSelection = computerPlay(); 
+    
 
     function computerPlay() {
         let selection = Math.random().toFixed(2);
@@ -23,31 +25,60 @@
     }
 
     function singleRound(playerSelection,computerSelection){
-        
+        playerSelect = prompt('Choose: "Rock, Paper, or Scissors"', "");
+        playerSelection = playerSelect.charAt(0).toUpperCase() + playerSelect.slice(1).toLowerCase();
 
-       if (playerSelection == /"rock"/i && computerSelection == "Rock"){
-           alert("Tie");
-       } else if (playerSelection == /"rock"/i && computerSelection == "Scissors"){
-           alert("You Win!");
-       } else if (playerSelection == /"rock"/i && computerSelection == "Paper"){
-           alert("You Lose.!");
-       } else if (playerSelection == /"paper"/i && computerSelection == "Rock"){
-           alert("You Win!");
-       } else if (playerSelection == /"paper"/i && computerSelection == "Scissors"){
-           alert("You Lose.");
-       } else if (playerSelection == /"paper"/i && computerSelection == "Paper"){
-           alert("Tie");
-       } else if (playerSelection == /"scissors"/i && computerSelection == "Rock"){
-           alert("You Lose.");
-       } else if (playerSelection == /"scissors"/i && computerSelection == "Scissors"){
-           alert("Tie");
-       } else if (playerSelection == /"scissors"/i && computerSelection == "Paper"){
-           alert("You Win!");
+       if (playerSelection == "Rock" && computerSelection == "Rock"){
+           return(
+               "It's a Tie." + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
+           return(
+               "You Win!" + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Rock" && computerSelection == "Paper"){
+           return(
+               "You Lose!" + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Paper" && computerSelection == "Rock"){
+           return(
+               "You Win!" + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
+           return(
+               "You Lose." + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Paper" && computerSelection == "Paper"){
+           return(
+               "It's a Tie." + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Scissors" && computerSelection == "Rock"){
+           return(
+               "You Lose." + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Scissors" && computerSelection == "Scissors"){
+           return(
+               "It's a Tie." + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
+           return(
+               "You Win!" + 
+               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
+               );
+       } else {
+           return(
+               "Not a valid choice");
        }
-       console.log(singleRound(playerSelection,computerSelection));
     }
-    function game() {
-        playerSelection = prompt("Rock Paper Scissors", "");
+    console.log(singleRound(playerSelection,computerSelection));
     }
     
 </script>

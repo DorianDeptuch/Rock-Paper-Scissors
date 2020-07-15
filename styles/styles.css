@@ -1,0 +1,109 @@
+#outer-shell {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    background: url(https://wonderfulengineering.com/wp-content/uploads/2013/12/metal-wallpaper-6.jpg);
+    transform: translateY(200px);
+    padding-top: 30px;
+    border-radius: 10px;
+}
+    #inner-shell {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        height: 50vh;
+        background: black;
+        border-radius: 10px;
+    }
+        #images-container {
+            background: #c4c4c4;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-basis: 50%;
+            border-bottom: 2px solid black;
+        }
+        #center-shell {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 50%;
+        }
+            #score-container {
+                display: flex;
+                flex-direction: row;
+                background:dimgray;
+                flex-basis: 50%;
+                border: 2px solid dimgray;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+                #computerBox {
+                    background-color: dimgray;
+                    font-family: 'Galada', cursive;
+                    color: lime;
+                    padding: 0px 5px 0px 5px;
+                }
+                    #computerScore {
+                        text-align: center;
+                        font-size: 40px;
+                        font-family: 'Saira Stencil One', cursive;
+                        color: lime;
+                    }
+                
+                #playerBox {
+                    background-color: dimgray;
+                    font-family: 'Galada', cursive;
+                    color: lime;
+                    padding: 0px 5px 0px 5px;
+                }
+
+                    #playerScore {
+                        text-align: center;
+                        font-size: 40px;
+                        font-family: 'Saira Stencil One', cursive;
+                        color: lime;
+                    }
+
+            #wording-container {
+                text-align: center;
+                background: dimgray;
+                flex-basis: 50%;
+                border: 2px solid dimgray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                #words {
+                    text-align: center;
+                    font-family: "Galada";
+                    font-size: 20px;
+                }
+#buttons {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+    button {
+        font-family: 'Galada', cursive;
+        font-size: 20px;
+        
+    }
+div p {
+    margin: 0px;
+}
+#finalScore {
+    font-size: 40px;
+    font-family: "Galada";
+    text-align: center;
+    align-self: center;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}

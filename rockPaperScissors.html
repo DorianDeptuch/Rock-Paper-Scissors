@@ -6,15 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <script> //To-Do: Make variable for post-game. 
+    // For some reason, the increment won't work with the variable.
+    //Also, add code to prevent cancelling from throwing an error
 function game() {
     let playerSelect;
-    let playerSelection; 
-    let computerSelection = computerPlay(); 
-    
+    let playerSelection = '';
+    let computerSelection;
+    let playerScore = 0;
+    let computerScore = 0;
 
     function computerPlay() {
         let selection = Math.random().toFixed(2);
+        // console.log('------>: computerPlay -> selection', selection);
         if (selection >= 0.66) {
             return "Rock";
         } else if (selection >= 0.33 && selection < 0.66) {
@@ -24,63 +28,106 @@ function game() {
         }
     }
 
-    function singleRound(playerSelection,computerSelection){
+    function singleRound(playerSelection, computerSelection) {
+        // console.log('------>: singleRound -> computerSelection', computerSelection);
+        // console.log('------>: singleRound -> playerSelection', playerSelection);
+
+        if (playerSelection == "Rock" && computerSelection == "Rock") {
+            return (
+                "It's a Tie." +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+            playerScore++;
+            return (
+                "You Win!" +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+
+        } else if (playerSelection == "Rock" && computerSelection == "Paper") {
+            computerScore++;
+            return (
+                "You Lose!" +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+            playerScore++;
+            return (
+                "You Win!" +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+            computerScore++;
+            return (
+                "You Lose." +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Paper" && computerSelection == "Paper") {
+            return (
+                "It's a Tie." +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
+            computerScore++;
+            return (
+                "You Lose." +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Scissors" && computerSelection == "Scissors") {
+            return (
+                "It's a Tie." +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+            playerScore++;
+            return (
+                "You Win!" +
+                ` You chose ${playerSelection} and the computer chose ${computerSelection}\n` +
+                `Your Score: ${playerScore}  Computer Score: ${computerScore}`
+            );
+        } else if (playerSelection == null) {
+            return (
+                "Not a valid choice"
+            );
+        } else {
+            return (
+                "Not a valid choice"
+            );
+        }
+    }
+    
+    for (let i = 0; i < 10; i++) {
+        // Player choice
         playerSelect = prompt('Choose: "Rock, Paper, or Scissors"', "");
         playerSelection = playerSelect.charAt(0).toUpperCase() + playerSelect.slice(1).toLowerCase();
 
-       if (playerSelection == "Rock" && computerSelection == "Rock"){
-           return(
-               "It's a Tie." + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Rock" && computerSelection == "Scissors"){
-           return(
-               "You Win!" + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Rock" && computerSelection == "Paper"){
-           return(
-               "You Lose!" + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Paper" && computerSelection == "Rock"){
-           return(
-               "You Win!" + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Paper" && computerSelection == "Scissors"){
-           return(
-               "You Lose." + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Paper" && computerSelection == "Paper"){
-           return(
-               "It's a Tie." + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Scissors" && computerSelection == "Rock"){
-           return(
-               "You Lose." + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Scissors" && computerSelection == "Scissors"){
-           return(
-               "It's a Tie." + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else if (playerSelection == "Scissors" && computerSelection == "Paper"){
-           return(
-               "You Win!" + 
-               ` You chose ${playerSelection} and the computer chose ${computerSelection}`
-               );
-       } else {
-           return(
-               "Not a valid choice");
-       }
+        // Computer choice
+        computerSelection = computerPlay()
+
+        console.log(singleRound(playerSelection, computerSelection));
+
+        if (playerScore == 3) {
+            return (
+
+                "YOU HAVE WON THE GAME"
+            );
+        } else if (computerScore == 3) {
+            return (
+                "YOU HAVE LOST THE GAME"
+            );
+        }
     }
-    console.log(singleRound(playerSelection,computerSelection));
-    }
-    
+}
+
+
 </script>
 </body>
 </html>

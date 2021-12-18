@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src="https://use.fontawesome.com/5bca93e86e.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Kelly+Slab&family=Poller+One&family=Saira+Stencil+One&family=Sonsie+One&display=swap" rel="stylesheet">
-    <!--font-family: 'Galada', cursive;
-        font-family: 'Kelly Slab', cursive;
-        font-family: 'Poller One', cursive;
-        font-family: 'Saira Stencil One', cursive;
-        font-family: 'Sonsie One', cursive;-->
-    <link href ="styles/styles.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://kit.fontawesome.com/b941211ee0.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galada&family=Kelly+Slab&family=Poller+One&family=Saira+Stencil+One&family=Sonsie+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/styles.css" rel="stylesheet" />
     <title>Document</title>
-</head>
-<body>
-
-<div id="outer-shell">
-    <div id="inner-shell">
+  </head>
+  <body>
+    <div id="outer-shell">
+      <div id="inner-shell">
         <div id="images-container">
-            <p id="finalScore"></p>
-            <img id ="playerImage" src="">
-            <img id ="computerImage" src="">
-
-            <i class="far fa-hand-rock"></i>
-            <i class="far fa-hand-paper"></i>
-            <i class="far fa-hand-scissors"></i>
+          <p id="finalScore"></p>
+          <img id="playerImage" src="" />
+          <img id="computerImage" src="" />
         </div>
         <div id="center-shell">
-            <div id="score-container">
-                <div id="playerBox">
-                    <p id="playerScore">0</p>
-                    <p>Player Score</p>
-                </div>
-                <div id="computerBox">
-                    <p id="computerScore">0</p>
-                    <p>Computer Score</p>
-                </div>
+          <div id="score-container">
+            <i id="rockIcon" class="far fa-hand-rock"></i>
+            <div id="playerBox">
+              <p id="playerScore">0</p>
+              <p>Player Score</p>
             </div>
-            <div id="wording-container">
-                <p id="words">
-
-                </p>
+            <i id="paperIcon" class="far fa-hand-paper"></i>
+            <div id="computerBox">
+              <p id="computerScore">0</p>
+              <p>Computer Score</p>
             </div>
+            <i id="scissorsIcon" class="far fa-hand-scissors"></i>
+          </div>
+          <div id="wording-container">
+            <p id="words"></p>
+          </div>
         </div>
-    </div>
-    <div id="buttons">
+      </div>
+      <div id="buttons">
         <button id="rock" class="choice">Rock</button>
         <button id="paper" class="choice">Paper</button>
-        <button id= "scissors" class="choice">Scissors</button>
+        <button id="scissors" class="choice">Scissors</button>
+      </div>
     </div>
-</div>
 
-<script src ="scripts/scripts.js" rel="script"></script>
-</body>
+    <script src="scripts/scripts.js" rel="script"></script>
+  </body>
 </html>

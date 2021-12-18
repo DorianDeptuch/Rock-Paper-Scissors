@@ -107,3 +107,12 @@ div p {
 .red {
     color: red;
 }
+#rockIcon { 
+    transform: scale(4);
+}
+#paperIcon {
+    transform: scale(4);
+}
+#scissorsIcon {
+    transform: scale(4);
+}
